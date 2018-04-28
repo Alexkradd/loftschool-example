@@ -96,7 +96,11 @@ function returnFirstArgument(a) {
   
      console.log(newSum()) выведет 6
    */
-  function bindFunction(fn) {
+  function bindFunction(fn,...args) {
+    return () => fn.apply(null, args)
+  }
+
+  /*function bindFunction(fn) {
     return fn.bind(null, ...[].slice.call(arguments, 1))
   }
   /*function bindFunction(fn, ...args) {
