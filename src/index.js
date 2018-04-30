@@ -14,10 +14,8 @@
  */
 function returnFirstArgument(a) {
     return a
-  }
-  
-  
-  /*
+}
+/*
    Задание 2:
   
    2.1: Функция должна возвращать сумму переданных аргументов
@@ -31,11 +29,10 @@ function returnFirstArgument(a) {
    Пример:
      sumWithDefaults(10) вернет 110
    */
-  function sumWithDefaults(a, b = 100) {
+function sumWithDefaults(a, b = 100) {
     return a + b
-  }
-  
-  /*
+}
+/*
    Задание 3:
   
    Функция должна принимать другую функцию и возвращать результат вызова этой функции
@@ -43,11 +40,10 @@ function returnFirstArgument(a) {
    Пример:
      returnFnResult(() => 'привет') вернет 'привет'
    */
-  function returnFnResult(fn) {
-   return fn();
-  }
-  
-  /*
+function returnFnResult(fn) {
+    return fn();
+}
+/*
    Задание 4:
   
    Функция должна принимать число и возвращать новую функцию (F)
@@ -60,13 +56,13 @@ function returnFirstArgument(a) {
      console.log(f()); // выведет 12
      console.log(f()); // выведет 13
    */
-  function returnCounter(number=0) {
+function returnCounter(number=0) {
     return function f() {
-      return ++number
-   }
+        return ++number
+    }
 }
   
-  /*
+/*
    Задание 5 *:
   
    Функция должна возвращать все переданные ей аргументы в виде массива
@@ -75,13 +71,13 @@ function returnFirstArgument(a) {
    Пример:
      returnArgumentsArray(1, 2, 3) вернет [1, 2, 3]
    */
-  function returnArgumentsArray(...arg) {
+function returnArgumentsArray(...arg) {
     return arg
-  }
-  //return [].slice.call(arguments)
-  //return Array.from(arguments)
+}
+// return [].slice.call(arguments)
+// return Array.from(arguments)
   
-  /*
+/*
    Задание 6 *:
   
    Функция должна принимать другую функцию (F) и некоторое количество дополнительных аргументов
@@ -96,22 +92,23 @@ function returnFirstArgument(a) {
   
      console.log(newSum()) выведет 6
    */
-  function bindFunction(fn,...args) {
+function bindFunction(fn, ...args) {
     return () => fn.apply(null, args)
-  }
+}
 
-  /*function bindFunction(fn) {
+/* function bindFunction(fn) {
     return fn.bind(null, ...[].slice.call(arguments, 1))
-  }
-  /*function bindFunction(fn, ...args) {
+}
+*/
+/* function bindFunction(fn, ...args) {
     return fn.bind(null, ...args)
-   */
+*/
   
-  export {
-      returnFirstArgument,
-      sumWithDefaults,
-      returnArgumentsArray,
-      returnFnResult,
-      returnCounter,
-      bindFunction
-  }  
+export {
+    returnFirstArgument,
+    sumWithDefaults,
+    returnArgumentsArray,
+    returnFnResult,
+    returnCounter,
+    bindFunction
+}  
