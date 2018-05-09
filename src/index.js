@@ -15,8 +15,8 @@
  Пример:
    isAllTrue([1, 2, 3, 4, 5], n => n < 10) // вернет true
    isAllTrue([100, 2, 3, 4, 5], n => n < 10) // вернет false
- */
-function isAllTrue(array, fn) {
+   */
+function AnotherFn(array) {
     if (array instanceof Array === false || array.length===0) {
         throw new Error ('empty array')
     }
@@ -24,6 +24,9 @@ function isAllTrue(array, fn) {
     if (typeof fn!=='function') {
         throw new Error ('fn is not a function')
     }
+}
+function isAllTrue(array, fn) {
+    AnotherFn(array)
 
     for (var item of array) {
         if (!fn(item)) {
@@ -51,14 +54,7 @@ function isAllTrue(array, fn) {
    isSomeTrue([1, 2, 3, 4, 5], n => n > 20) // вернет false
  */
 function isSomeTrue(array, fn) {
-    if (array instanceof Array === false || array.length===0) {
-        throw new Error ('empty array')
-    }
-
-    if (typeof fn!=='function') {
-        throw new Error ('fn is not a function')
-    }
-
+    AnotherFn(array)
     for (var item of array) {
         if (fn(item)) {
             return true
